@@ -6,9 +6,14 @@ pipeline {
                 echo "$GIT_BRANCH"
             }
         }
-        stage('VerifyTerraformVersion') {
+        stage('TerraformInit') {
             steps {
-                sh 'terraform --version'
+                sh 'terraform init'
+            }
+        }
+        stage('ValidateTerraformCode') {
+            steps {
+                sh 'terraform validate'
             }
         }
     }
