@@ -16,5 +16,10 @@ pipeline {
                 sh 'terraform validate'
             }
         }
+        stage('TerraformPlan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
     }
 }
