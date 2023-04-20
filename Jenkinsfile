@@ -8,7 +8,7 @@ pipeline {
         }
         stage('TerraformInit') {
             steps {
-                sh 'terraform init'
+                sh 'terraform init -reconfigure'
             }
         }
         stage('ValidateTerraformCode') {
