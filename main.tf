@@ -63,7 +63,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
   [
     {
       "name": "${var.app_name}-container",
-      "image": "cloudmagicmaster/nginx:1.2",
+      "image": "cloudmagicmaster/nginx:1.3",
       "essential": true,
       "logConfiguration": {
         "logDriver": "awslogs",
