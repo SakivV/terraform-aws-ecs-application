@@ -18,7 +18,12 @@ pipeline {
         }
         stage('TerraformPlan') {
             steps {
-                sh 'terraform plan'
+                sh 'terraform plan -out ecs_plan.tfplan'
+            }
+        }
+         stage('TerraformPlan') {
+            steps {
+                sh 'terraform apply ecs_plan.tfplan'
             }
         }
     }
