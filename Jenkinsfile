@@ -21,7 +21,7 @@ pipeline {
                 sh 'terraform plan -out ecs_plan.tfplan'
             }
         }
-         stage('TerraformPlan') {
+         stage('TerraformApply') {
             steps {
                 sh 'terraform apply ecs_plan.tfplan'
             }
