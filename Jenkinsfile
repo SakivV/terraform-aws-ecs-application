@@ -23,7 +23,7 @@ pipeline {
         }
          stage('TerraformApply') {
             steps {
-                sh 'terraform apply ecs_plan.tfplan'
+                sh 'terraform destroy --auto-approve'
             }
         }
     }
